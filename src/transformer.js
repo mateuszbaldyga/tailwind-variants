@@ -260,7 +260,9 @@ export const withTV = (tailwindConfig, transformerConfig) => {
   let config = resolveConfig(tailwindConfig);
 
   // generate types
-  generateTypes(config.theme);
+  // Commented out because it's get called during server action execution,
+  // causing an error: "Uncaught Exception: Error: EROFS: read-only file system, open '/var/task/.next/server/chunks/generated.d.ts' at Object.writeFileSync (node:fs:2342:20)"
+  // generateTypes(config.theme);
 
   // invalid content files
   if (isEmpty(config.content?.files) || !isArray(config.content.files)) return config;

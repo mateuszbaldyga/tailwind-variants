@@ -27,6 +27,7 @@
   ],
   "scripts": {
     "build": "tsup && node copy-types.cjs",
+    "prepare": "npm run build",
     "typecheck": "tsc --noEmit",
     "prepack": "clean-package",
     "benchmark": "node benchmark.js",
